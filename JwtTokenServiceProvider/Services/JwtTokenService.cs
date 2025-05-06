@@ -22,9 +22,7 @@ public class JwtTokenService(IConfiguration configuration, JwtSecurityTokenHandl
 
             List<Claim> claims = new()
             {
-                new(ClaimTypes.NameIdentifier, request.UserId),
-                new(ClaimTypes.Email, request.Email),
-                new(ClaimTypes.Role, request.Role)
+                new(ClaimTypes.NameIdentifier, request.ServiceName),
             };
 
             SecurityTokenDescriptor tokenDescriptor = new()
