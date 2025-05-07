@@ -17,12 +17,8 @@ var client = new JwtTokenServiceContract.JwtTokenServiceContractClient(channel);
 
 // Generate Token
 var genReply = await client.GenerateTokenAsync(new TokenRequest {
-<<<<<<< HEAD
     UserId = "123",
     Email = "user@example.com"
-=======
-    ServiceName = "MailService"
->>>>>>> 03ea5a4a6b50d1e2ea18d29e34cc00f00d0e115d
 });
 
 // Validate Token
