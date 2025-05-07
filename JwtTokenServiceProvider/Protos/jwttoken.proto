@@ -6,11 +6,11 @@ package jwttoken;
 
 service JwtTokenServiceContract {
   rpc GenerateToken (TokenRequest) returns (TokenReply);
+
   rpc ValidateToken (ValidateRequest) returns (ValidateReply);
 }
 
 message TokenRequest {
-  string user_id = 1;
   string email = 2;
 }
 
