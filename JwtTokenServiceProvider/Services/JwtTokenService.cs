@@ -20,10 +20,10 @@ public class JwtTokenService(IConfiguration configuration, JwtSecurityTokenHandl
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!);
             var issuer = _configuration["Jwt:Issuer"]!;
 
-            List<Claim> claims = new()
-            {
+            List<Claim> claims =
+            [
                 new(ClaimTypes.Email, request.Email)
-            };
+            ];
 
             SecurityTokenDescriptor tokenDescriptor = new()
             {
