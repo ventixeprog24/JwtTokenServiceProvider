@@ -26,3 +26,11 @@ var valReply = await client.ValidateTokenAsync(new ValidateRequest {
     Token = genReply.TokenMessage
 });
 ```
+
+### Possible Return statuses
+| Method            |   ReturnStatus   | Message           | Meaning                                                                       |
+| ----------------- | :--------------: | ----------------- | ----------------------------------------------------------------------------- |
+| **GenerateToken** |  succeeded: true | JWT string        | Token generated successfully and signed with HMAC-SHA256                      |
+|                   | succeeded: false | Exception message | Error during token creation (e.g., missing config, encoding issue)            |
+| **ValidateToken** |  isTokenOk: true | –                 | Token is well-formed, signature valid, issuer matches, and not expired        |
+|                   | isTokenOk: false | –                 | Token invalid due to signature failure, expiry, issuer mismatch, or malformed |
