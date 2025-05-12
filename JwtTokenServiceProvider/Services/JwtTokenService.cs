@@ -19,6 +19,7 @@ public class JwtTokenService(IConfiguration configuration, JwtSecurityTokenHandl
         {
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!);
             var issuer = _configuration["Jwt:Issuer"]!;
+            var audience = _configuration["JWT:Audience"]!;
 
             List<Claim> claims =
             [
@@ -28,6 +29,7 @@ public class JwtTokenService(IConfiguration configuration, JwtSecurityTokenHandl
             SecurityTokenDescriptor tokenDescriptor = new()
             {
                 Issuer = issuer,
+                Audience = audience,
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials =
