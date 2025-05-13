@@ -1,3 +1,5 @@
+Partly AI Generated.
+
 # JwtTokenServiceProvider
 
 ## How to use it
