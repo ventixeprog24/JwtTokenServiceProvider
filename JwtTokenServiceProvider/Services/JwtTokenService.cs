@@ -21,6 +21,13 @@ public class JwtTokenService(IConfiguration configuration, JwtSecurityTokenHandl
             var issuer = _configuration["Jwt:Issuer"]!;
             var audience = _configuration["JWT:Audience"]!;
 
+            if (string.IsNullOrWhiteSpace(request.Email))
+                return Task.FromResult(new TokenReply
+                {
+                    Succeeded = false,
+                    TokenMessage = "Email missing"
+                });
+
             List<Claim> claims =
             [
                 new(ClaimTypes.Email, request.Email)
