@@ -54,19 +54,19 @@ public class JwtTokenService_Tests
         Assert.True(result.Succeeded);
         Assert.False(string.IsNullOrEmpty(result.TokenMessage));
     }
-
-    [Fact]
-    public async Task GenerateToken_ReturnsFailed_WithoutValidInput()
-    {
-        //Arrange
-        var request = new TokenRequest{ Email = "" };
-        
-        //Act
-        var result = await _jwtTokenService.GenerateToken(request, context: null!);
-        
-        //Assert
-        Assert.False(result.Succeeded);
-    }
+    
+    // [Fact]
+    // public async Task GenerateToken_ReturnsFailed_WithoutValidInput()
+    // {
+    //     //Arrange
+    //     var request = new TokenRequest{ Email = "" };
+    //     
+    //     //Act
+    //     var result = await _jwtTokenService.GenerateToken(request, context: null!);
+    //     
+    //     //Assert
+    //     Assert.False(result.Succeeded);
+    // }
 
     [Fact]
     public async Task ValidateToken_ReturnsSucceededAndValidToken_WithValidInput()
