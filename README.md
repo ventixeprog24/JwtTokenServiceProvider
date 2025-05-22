@@ -2,6 +2,8 @@ Partly AI Generated.
 
 # JwtTokenServiceProvider
 
+This Microservice will generate and validate Jwt tokens for the Ventixe system.
+
 ## How to use it
 
 Make sure you have an exact copy of the proto-file in the client application. Don't forget to register the proto in the project.
